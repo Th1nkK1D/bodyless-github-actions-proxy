@@ -1,0 +1,15 @@
+{
+  "name": "strapi-github-actions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Th1nkK1D/strapi-github-actions.git",
+  "author": "Th1nkK1D <witheep@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "serve": "vercel dev"
+  },
+  "devDependencies": {
+    "@vercel/node": "^1.8.5",
+    "vercel": "^21.0.1"
+  }
+}
