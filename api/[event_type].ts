@@ -22,8 +22,6 @@ export default async (request: NowRequest, response: NowResponse) => {
     return;
   }
 
-  response.status(200).send(event_type);
-
   try {
     await axios.post(
       `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPOSITORY}/dispatches`,
@@ -38,7 +36,10 @@ export default async (request: NowRequest, response: NowResponse) => {
       }
     );
 
-    response.status(200).send('success');
+    response.status(200).send({
+      target: `${GITHUB_USER}/${GITHUB_REPOSITORY}`,
+      event_type,
+    });
   } catch (error) {
     response.status(422).send(error);
   }
