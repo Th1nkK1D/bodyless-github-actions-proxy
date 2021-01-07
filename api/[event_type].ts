@@ -6,22 +6,29 @@ const {
   GITHUB_USER,
   GITHUB_REPOSITORY,
   GITHUB_TOKEN,
-  ACTIONS_EVENT_TYPE,
 } = process.env;
 
 export default async (request: NowRequest, response: NowResponse) => {
   const { authorization } = request.headers;
+  const { event_type } = request.query;
 
   if (authorization !== `Bearer ${AUTHORIZATION_TOKEN}`) {
     response.status(403).send('Authorization failed');
     return;
   }
 
+  if (!event_type) {
+    response.status(400).send('event_type is not defined');
+    return;
+  }
+
+  response.status(200).send(event_type);
+
   try {
     await axios.post(
       `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPOSITORY}/dispatches`,
       {
-        event_type: ACTIONS_EVENT_TYPE,
+        event_type,
       },
       {
         headers: {
