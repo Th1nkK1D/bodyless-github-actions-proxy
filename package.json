@@ -6,10 +6,13 @@
   "author": "Th1nkK1D <witheep@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "serve": "vercel dev"
+    "vercel": "vercel"
   },
   "devDependencies": {
     "@vercel/node": "^1.8.5",
     "vercel": "^21.0.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
   }
 }
