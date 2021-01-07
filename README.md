@@ -1,10 +1,10 @@
-# Strapi Github Actions
+# Bodyless Github Actions Proxy
 
-Strapi and Github actions proxy using Vercel's function
+Use bodyless request to trigger Github actions with Vercel's function
 
 ## Why?
 
-Github actions require specific request body to trigger pipeline, and Strapi is not allow us to custom webhook body request. So this proxy kicked in.
+Github actions require specific request body to trigger pipeline, and many CMS or services (ex. Strapi) are not allow us to custom webhook body request. So this proxy kicked in.
 
 ## Usage
 
@@ -42,9 +42,7 @@ Follow [Vercel environment variable doc](https://vercel.com/docs/environment-var
 - `GITHUB_USER`: User/organization that owned the repository
 - `AUTHORIZATION_TOKEN`: Used to validate Strapi request in step 4. Can be anything but recommended to generate by passwork manager or [random keygen](https://randomkeygen.com/)
 
-### 4. Config Strapi webhook
-
-Follow [Strapi Webhook doc](https://strapi.io/documentation/developer-docs/latest/concepts/webhooks.html)
+### 4. Config CMS/service webhook
 
 - Set url to `<vercel-deployed-url>/api/<event_type>`
 - For Headers, add `Authorization` key with value of `Bearer <AUTHORIZATION_TOKEN>`

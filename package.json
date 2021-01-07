@@ -1,9 +1,9 @@
 {
-  "name": "strapi-github-actions",
-  "description": "Strapi and Github actions proxy using Vercel's function",
+  "name": "bodyless-github-actions-proxy",
+  "description": "Use bodyless request to trigger Github actions with Vercel's function",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/Th1nkK1D/strapi-github-actions.git",
+  "repository": "https://github.com/Th1nkK1D/bodyless-github-actions-proxy.git",
   "author": "Th1nkK1D <witheep@gmail.com>",
   "license": "MIT",
   "scripts": {
