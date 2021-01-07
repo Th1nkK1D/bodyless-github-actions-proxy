@@ -1,5 +1,6 @@
 {
   "name": "strapi-github-actions",
+  "description": "Strapi and Github actions proxy using Vercel's function",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/Th1nkK1D/strapi-github-actions.git",
